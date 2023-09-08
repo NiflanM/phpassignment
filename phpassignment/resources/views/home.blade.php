@@ -1,5 +1,6 @@
 @extends('layouts.app')
-<title>AdminLTE 3 | Dashboard</title>
+<title>Home</title>
+<link rel="icon" type="image/x-icon" href="assets/img/dds4.jpg">
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
 
@@ -27,12 +28,12 @@
 </head>
 @section('content')
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: 1200px">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: 1050px">
   <!-- Brand Logo -->
-  <a href="../../index3.html" class="brand-link">
+  <b  class="brand-link">
     <img src="../../assets/img/dds4.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .8">
-    <span class="brand-text font-weight-light">TableTrove</span>
-  </a>
+    <a style="color:rgb(215, 220, 228)">ReserviQ</a>
+  </b>
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -88,6 +89,26 @@
             </p>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a href="../widgets.html" class="nav-link">
+            <i class="fas fa-bullhorn nav-icon "></i>
+            <p>
+            Promotions
+            </p>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="../widgets.html" class="nav-link">
+            <i class="fas fa-pen-square nav-icon "></i>
+            <p>
+            Feedbacks
+            </p>
+          </a>
+        </li>
+     
+
         <li class="nav-item">
           <a href="../widgets.html" class="nav-link">
             <i class="fa fa-user nav-icon "></i>
@@ -97,22 +118,6 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fas fa-pen-square nav-icon "></i>
-            <p>
-            Feedbacks
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fas fa-bullhorn nav-icon "></i>
-            <p>
-            Promotions
-            </p>
-          </a>
-        </li>
         <aside class="control-sidebar control-sidebar-dark">
           <!-- Control sidebar content goes here -->
         </aside>
@@ -120,9 +125,9 @@
       </div>
       <!-- ./wrapper -->
     </div>
-    <div class="container"  >
+    <div class="container" style="margin-left:190px" >
  
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" >
           <div class="col-md-8">
               <div class="card">
   
@@ -140,7 +145,7 @@
                   <div class="card-header">{{ __('Dashboard') }}</div>
                
               </div>
-              <div class="row">
+              <div class="row" >
                 <div class="col-lg-3 col-6">
                   <!-- small box -->
                   <div class="small-box bg-info">
@@ -204,73 +209,7 @@
               </div>
               <!-- /.row -->
               <!-- Main row --> 
-              <div class="row">
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-info">
-                    <div class="inner">
-                      <h3>150</h3>
              
-                      <p>New Orders</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-success">
-                    <div class="inner">
-                      <h3>53<sup style="font-size: 20px">%</sup></h3>
-             
-                      <p>Occupancy</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-warning">
-                    <div class="inner">
-                      <h3>44</h3>
-             
-                      <p>User Registrations</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-danger">
-                    <div class="inner">
-                      <h3>65</h3>
-             
-                      <p>Unique Visitors</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-              </div>
-              
-              <!-- /.row -->
-              <!-- Main row --> 
-        </div>
-    </div>
     
 </div>
         </div>

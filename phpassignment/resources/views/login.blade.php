@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login Page | Log in</title>
-
+  <title>Log in</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/dds4.jpg">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -14,21 +14,23 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page" style="background-color: rgb(12, 57, 78)">
+<p >
+
+<body class="hold-transition login-page" style="background-image: url('assets/img/bg.webp');" >
 <div class="login-box">
-  {{-- <div class="login-logo" >
-    <a href=""><b style="color:white ">WELCOME BACK</b></a>
-  </div> --}}
+  
   <!-- /.login-logo -->
-  <div class="card" style="height:400px">
+  <div class="card" style="height:395px">
     <div class="card-body login-card-body">
-    <b><p class="login-box-msg" style="font-size: 30px">Sign in with TableTrove</p></b>
+
+    <b><p class="login-box-msg" style="font-size: 29px">Sign in with <a style="color:rgb(80, 130, 204)">ReserviQ</a></p></b>
 
       @if(Session::has('error'))
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-danger" style="margin-bottom: -10px" role="alert">
        {{Session::get('error')}}
       </div>
       @endif
+      <br>
       <form action="{{route('login')}}" method="POST">
         @csrf
         <div class="input-group mb-3">
@@ -65,13 +67,24 @@
           </div>
           <!-- /.col -->
         </div>
+       
       </form>
+      <br>
+      <div class="social-auth-links text-center mb-3" >
+        <p->----------------------------- OR ------------------------------</p>
     </div>
-
+    
+    </div>
+    
+      
+    
       
       <!-- /.social-auth-links -->
 
       <p class="mb-0">
+       
+       
+      
         <button class="btn btn-primary btn-block"><b><a href="{{route('register')}}" class="text-center" style="color:white" >Create new account</a></b></button>
       </p>
     </div>

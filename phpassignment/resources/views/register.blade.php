@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registration Page | Register</title>
-
+  <title>Register Now</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/dds4.jpg">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -14,7 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page"style="background-color: rgb(12, 57, 78)">
+<body class="hold-transition login-page"style="background-image: url('assets/img/bg.webp');">
 <div class="login-box">
   {{-- <div class="login-logo" >
     <a href=""><b style="color:white ">Registration</b></a>
@@ -22,7 +22,7 @@
   <!-- /.login-logo -->
   <div class="card"  >
     <div class="card-body login-card-body">
-    <b><p class="login-box-msg" style="font-size: 30px">Register with TableTrove</p></b>
+    <b><p class="login-box-msg" style="font-size: 25px">Register with <a style="color:rgb(80, 130, 204)">ReserviQ</a></p></b>
 
     @if(Session::has('error'))
     <div class="alert alert-success" role="alert">
@@ -87,6 +87,7 @@
       <!-- /.social-auth-links -->
 <br>
       <p class="mb-0">
+        
         <button class="btn btn-success btn-block"><b><a href="{{route('login')}}" class="text-center" style="color:white" >Already a Member ?</a></b></button>
       </p>
     </div>
