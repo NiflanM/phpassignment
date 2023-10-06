@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../assets//icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+  @livewireStyles
 </head>
 <p >
 
@@ -99,5 +100,7 @@
 <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../assets/js/adminlte.min.js"></script>
+@livewireScripts
+
 </body>
 </html>

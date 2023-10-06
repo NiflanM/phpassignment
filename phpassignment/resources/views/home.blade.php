@@ -24,7 +24,7 @@
 <link rel="stylesheet" href=assets/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="assets/summernote-bs4.min.css">
-
+ @livewireStyles
 </head>
 @section('content')
 
@@ -286,5 +286,7 @@
 <!-- ./wrapper -->
         </div>
     </div>
-
+    @livewireScripts
+  </body>
+  </html>
 @endsection
