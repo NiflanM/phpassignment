@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\AdminAuth;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ class Authcontroller extends Controller
 {
     public function login()
     {
-        return view('login');
+        return view('admin.auth.login');
     }
     public function loginPost(Request $request)
     {
@@ -21,10 +22,7 @@ class Authcontroller extends Controller
             'password' => $request->password,
         ];
         if(Auth::attempt($credetials)){
-            if(Auth::user()->role == 0)
-                return redirect('/home')->with('success','Login Success');
-            else
-                return redirect('/showfeedback')->with('success','Login Success');
+            return redirect('/home')->with('Admin Dashboard');
         }
         return back()->with('error','Error Email or Password');
     }

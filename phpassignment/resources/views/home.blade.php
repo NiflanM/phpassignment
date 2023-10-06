@@ -24,7 +24,7 @@
 <link rel="stylesheet" href=assets/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="assets/summernote-bs4.min.css">
- @livewireStyles
+
 </head>
 @section('content')
 
@@ -36,95 +36,7 @@
   </b>
 
   <!-- Sidebar -->
-  <div class="sidebar">
-    <!-- Sidebar user (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <img src="../../assets/img/download1.jpg" class="img-circle elevation-2" style="height: 80%" alt="User Image">
-      </div>
-      <div class="info" style="color: white;font-size:20px">
-    {{ Auth::user('')->name }} 
-      </div>
-    </div>
-
-    <!-- SidebarSearch Form -->
-    <div class="form-inline"  style="color: white">
-      <div class="input-group" data-widget="sidebar-search" >
-        <input class="form-control form-control-sidebar" style="background-color: white" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append" >
-          <button class="btn btn-sidebar" >
-            <i class="fas fa-search fa-fw"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sidebar Menu -->
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
-             with font-awesome or any other icon font library -->
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-home"></i>
-            <p>
-             Home
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fa fa-table nav-icon "></i>
-            <p>
-            Reservation
-             
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fas fa-hamburger nav-icon  "></i>
-            <p>
-            Menu 
-            </p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fas fa-bullhorn nav-icon "></i>
-            <p>
-            Promotions
-            </p>
-          </a>
-        </li>
-        
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fas fa-pen-square nav-icon "></i>
-            <p>
-            Feedbacks
-            </p>
-          </a>
-        </li>
-     
-
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fa fa-user nav-icon "></i>
-            <p>
-            Profile
-            </p>
-          </a>
-        </li>
-
-        <aside class="control-sidebar control-sidebar-dark">
-          <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-      </div>
-      <!-- ./wrapper -->
-    </div>
+  @include('partials.sidebar')
     <div class="container" style="margin-left:190px" >
  
       <div class="row justify-content-center" >
@@ -209,7 +121,6 @@
               </div>
               <!-- /.row -->
               <!-- Main row --> 
-             
     
 </div>
         </div>
@@ -218,53 +129,7 @@
     
 </div>
 
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <div class="container-fluid">
-    </div><!-- /.container-fluid -->
-  </section>
 
-  <!-- Main content -->
-  <section class="content">
-
-    <!-- Default box -->
-    <div class="card">
-      <div class="card-body row">
-        <div class="col-5 text-center d-flex align-items-center justify-content-center">
-          <div class="">
-            <h2><strong>Contact Us</strong></h2>
-            <p class="lead mb-5">123 Testing Ave, Testtown, 9876 NA<br>
-              Phone: +1 234 56789012
-            </p>
-          </div>
-        </div>
-        <div class="col-7">
-          <div class="form-group">
-            <label for="inputName">Name</label>
-            <input type="text" id="inputName" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">E-Mail</label>
-            <input type="email" id="inputEmail" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label for="inputSubject">Subject</label>
-            <input type="text" id="inputSubject" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label for="inputMessage">Message</label>
-            <textarea id="inputMessage" class="form-control" rows="4"></textarea>
-          </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Send message">
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-  <!-- /.content -->
   
 </div>
 <!-- /.content-wrapper -->
@@ -275,8 +140,6 @@
   <strong>Copyright &copy; 2023 <a href="https://TableTrove.lk">TableTrove</a>.</strong> All rights reserved.
 </footer>
 
-
-
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
   <!-- Control sidebar content goes here -->
@@ -286,7 +149,5 @@
 <!-- ./wrapper -->
         </div>
     </div>
-    @livewireScripts
-  </body>
-  </html>
+
 @endsection
