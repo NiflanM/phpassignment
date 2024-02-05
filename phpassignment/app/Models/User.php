@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'username',
+        'role',
     ];
 
     /**
@@ -63,4 +63,9 @@ class User extends Authenticatable
 		$this->fillable = $fillable;
 		return $this;
 	}
+    public function reservations()
+{
+    return $this->hasMany(Reservation::class);
+}
+    
 }

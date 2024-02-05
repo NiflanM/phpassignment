@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Hash;
 
 class Authcontroller extends Controller
 {
+    public function __invoke(Request $request){
+        if(!Auth::attempt($request->only('email','password'))){
+            return response()->json([
+                'message' => 'Invalid login details'
+            ],401);
+        }
+        $token = auth()->user()->createToken('personal-token',expiresAt:now()->addMinutes(5))->plainTextToken;
+        return response()->json(['token'=>$token]);
+    }
     public function login()
     {
         return view('login');
@@ -23,8 +32,11 @@ class Authcontroller extends Controller
         if(Auth::attempt($credetials)){
             if(Auth::user()->role == 0)
                 return redirect('/home')->with('success','Login Success');
+            elseif(Auth::user()->role == 2)
+                return redirect('/profile')->with('success','Login Success');
             else
-                return redirect('/showfeedback')->with('success','Login Success');
+                return redirect('/dashboard')->with('success','Login Success');
+        
         }
         return back()->with('error','Error Email or Password');
     }

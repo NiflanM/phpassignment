@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Register Now</title>
-  <link rel="icon" type="image/x-icon" href="assets/img/dds4.jpg">
+  <link rel="icon" type="image/x-icon" href="assets/img/fashion.png">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -13,8 +13,36 @@
   <link rel="stylesheet" href="../assets//icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('assets/img/images.jpeg');
+
+    }
+    .login-box {
+      background: rgba(0, 0, 0, 0.15);
+    
+    }
+    .login-card-body {
+      background: rgba(0, 0, 0, 0.05);
+   
+    }
+   
+    .card {
+      background: rgba(0, 0, 0, 0.05);
+ 
+    }
+    .login-box-msg {
+      color: white;
+    }
+    .col-8{
+      color:white;
+    }
+  </style>
+
 </head>
-<body class="hold-transition login-page"style="background-image: url('assets/img/bg.webp');">
+
+<body class="hold-transition login-page">
 <div class="login-box">
   {{-- <div class="login-logo" >
     <a href=""><b style="color:white ">Registration</b></a>
@@ -22,7 +50,7 @@
   <!-- /.login-logo -->
   <div class="card"  >
     <div class="card-body login-card-body">
-    <b><p class="login-box-msg" style="font-size: 25px">Register with <a style="color:rgb(80, 130, 204)">ReserviQ</a></p></b>
+    <b><p class="login-box-msg" style="font-size: 25px" style="font-family:Bricolage Grotesque">REGISTER<a style="color:rgb(80, 130, 204)"></a></p></b>
 
     @if(Session::has('error'))
     <div class="alert alert-success" role="alert">
@@ -70,13 +98,13 @@
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
+               I agree to the terms</a>
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" >Register</button>
+            <button type="submit" class="btn btn-dark btn-block" >Register</button>
           </div>
           <!-- /.col -->
         </div>
@@ -88,7 +116,7 @@
 <br>
       <p class="mb-0">
         
-        <button class="btn btn-success btn-block"><b><a href="{{route('login')}}" class="text-center" style="color:white" >Already a Member ?</a></b></button>
+        <button class="btn btn-dark btn-block"><b><a href="{{route('login')}}" class="text-center" style="color:white" >Already a Member ?</a></b></button>
       </p>
     </div>
     <!-- /.login-card-body -->

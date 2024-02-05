@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\Models\Customer;
+use App\Models\User;
 class CustomerController extends Controller
 {
     /**
@@ -17,8 +17,8 @@ class CustomerController extends Controller
 
     public function index()
     {
-       $customer = Customer::all();
-       return view ('customer.index')->with('customer',$customer);
+        $user = User::paginate(5);
+       return view ('customer.index')->with('customer',$user);
     }
 
     /**
@@ -35,7 +35,12 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
          $input = $request->all();
-        customer::create($input);
+         user::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'role' => $request->role
+         ]);
             return redirect('customer')->with('flash_message','Customer Added!');
     }
 
@@ -44,8 +49,8 @@ class CustomerController extends Controller
      */
     public function show(string $id)
     {
-        $customer = Customer::find($id);
-        return view('customer.show')->with('customer',$customer);
+        $user = User::find($id);
+        return view('customer.show')->with('customer',$user);
     }
 
     /**
@@ -53,8 +58,8 @@ class CustomerController extends Controller
      */
     public function edit(string $id)
     {
-        $customer = Customer::find($id);
-        return view('customer.edit')->with('customer',$customer);
+        $user = User::find($id);
+        return view('customer.edit')->with('customer',$user);
     }
 
     /**
@@ -62,9 +67,9 @@ class CustomerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $customer = Customer::find($id);
+        $user = User::find($id);
        $input = $request->all();
-       $customer->update($input);
+      $user->update($input);
        return redirect('customer')->with('flash_message','Customer Updated!');
     }
 
@@ -73,7 +78,7 @@ class CustomerController extends Controller
      */
     public function destroy(string $id)
     {
-        Customer::destroy($id);
+        User::destroy($id);
        return redirect('customer')->with('flash_message','Customer Deleted!');
     }
 }

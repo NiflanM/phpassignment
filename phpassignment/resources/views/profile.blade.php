@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <title>Profile</title>
-<link rel="icon" type="image/x-icon" href="assets/img/dds4.jpg">
+<link rel="icon" type="image/x-icon" href="assets/img/fashion.png">
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
 
@@ -27,11 +27,16 @@
 
 </head>
 @section('content')
-
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: 655px">
+    <!-- Brand Logo -->
+    <b class="brand-link">
+      <img src="../../assets/img/dds4.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .8">
+      <a style="color:rgb(215, 220, 228)">ReserviQ</a>
+    </b>
 @include('partials.sidebar')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8" >
             <div class="card">
                 <div class="card-header bg-primary text-white">{{ __('Profile') }}</div>
 
@@ -58,11 +63,11 @@
                     
                    
                     
-                    <!-- Add more content here -->
+                
                     <div class="row">
                         <div class="col-md-12">
                             <h5 class="font-weight-bold">Additional Information:</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac justo sit amet nunc malesuada lacinia.</p>
+                            <p>.</p>
                         </div>
                     </div>
 
@@ -73,4 +78,5 @@
         
     </div>
 </div>
+@include('partials.footer')
 @endsection

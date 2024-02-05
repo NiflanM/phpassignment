@@ -28,9 +28,9 @@ class FeedbackController extends Controller
 
   
      public function index()
-    {  
+    {   
         return view('feedback');
-
+      
 
     }
 
@@ -45,11 +45,22 @@ class FeedbackController extends Controller
         return redirect('feedback')->with('flash_message','Thank you for the feedback!');
      
     }
-    public function showfeedback(){
-
-        $feedback = DB::table('feedback as f')->select('users.name as customer_name','f.subject','f.message')->join('users','f.customer_id','=','users.id')->where(array('role'=>0))->get();
-        return view('showfeedback')->with('feedback',$feedback);
+    public function showfeedback()
+    {
+        
+        $feedback = DB::table('feedback as f')
+            ->select('users.name as customer_name', 'f.subject', 'f.message', 'f.id') // Include the feedback ID
+            ->join('users', 'f.customer_id', '=', 'users.id')
+            ->where('users.role', 0)
+            ->get();
+          
+        return view('showfeedback')->with('feedback', $feedback);
+        
     }
-    
+    public function destroy($id)
+{
+    Feedback::destroy($id);
+    return redirect('showfeedback')->with('flash_message', 'Feedback deleted successfully');
+}
 }
 

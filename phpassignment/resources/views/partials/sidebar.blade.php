@@ -1,15 +1,16 @@
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: 1050px">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: 740px">
   <!-- Brand Logo -->
-  <b  class="brand-link">
-    <img src="../../assets/img/dds4.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .8">
-    <a style="color:rgb(215, 220, 228)">ReserviQ</a>
+  <b class="brand-link">
+    <img src="../../assets/img/fashion.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .8">
+    <a style="color:rgb(215, 220, 228)">Reserve.lk</a>
   </b>
+
 <div class="sidebar">
     <!-- Sidebar user (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="../../assets/img/download1.jpg" class="img-circle elevation-2" style="height: 80%" alt="User Image">
+        {{-- <img src="../../assets/img/download1.jpg" class="img-circle elevation-2" style="height: 80%" alt="User Image"> --}}
       </div>
       <div class="info" style="color: white;font-size:20px">
     {{ Auth::user('')->name }} 
@@ -35,29 +36,22 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-home"></i>
+          <a href="{{url('home')}}" class="nav-link">
+            <i class="fas fa-hamburger nav-icon  "></i>
             <p>
-             Home
+             Menu
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{url('reservation')}}" class="nav-link">
+          <a href="{{url('reservations')}}" class="nav-link">
             <i class="fa fa-table nav-icon "></i>
             <p>
             Reservation
             </p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
-            <i class="fas fa-hamburger nav-icon  "></i>
-            <p>
-            Menu 
-            </p>
-          </a>
-        </li>
+     
        
         
         <li class="nav-item">
@@ -71,7 +65,7 @@
         
         <li class="nav-item">
           <a href="{{url('feedback')}}" class="nav-link">
-            <i class="fas fa-pen-square nav-icon "></i>
+            <i class="fas fa-comments nav-icon"></i>
             <p>
             Feedbacks
             </p>
@@ -87,7 +81,41 @@
             </p>
           </a>
         </li>
-        @else
+        @elseif (Auth::user('')->role==1)
+        <li class="nav-item">
+          <a href="{{url('dashboard')}}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt "></i>
+            <p>
+           Dashboard
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url('reservations')}}" class="nav-link">
+            <i class="fa fa-table nav-icon "></i>
+            <p>
+           View Reservation
+            </p>
+          </a>
+        </li>
+    
+        <li class="nav-item">
+          <a href="{{url('customer')}}"   class="nav-link">
+            <i class="fas fa-pen-square nav-icon "></i>
+            <p>
+        Manage Users
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url('showfeedback')}}"   class="nav-link">
+            <i class="fas fa-comments nav-icon"></i>
+            <p>
+        View feedback
+            </p>
+          </a>
+        </li>
+       
         <li class="nav-item">
           <a href="{{url('profile')}}" class="nav-link">
             <i class="fa fa-user nav-icon "></i>
@@ -97,30 +125,49 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{url('customer')}}"   class="nav-link">
-            <i class="fas fa-pen-square nav-icon "></i>
+          <a href="{{url('home')}}" class="nav-link">
+            <i class="fas fa-hamburger nav-icon  "></i>
             <p>
-        Manage Customer
+             Menu
             </p>
           </a>
         </li>
+        @else
+       
+        <li class="nav-item">
+          <a href="{{url('reservations')}}" class="nav-link">
+            <i class="fa fa-table nav-icon "></i>
+            <p>
+           View Reservation
+            </p>
+          </a>
+        </li>
+    
         <li class="nav-item">
           <a href="{{url('showfeedback')}}"   class="nav-link">
-            <i class="fas fa-pen-square nav-icon "></i>
+            <i class="fas fa-comments nav-icon"></i>
             <p>
         View feedback
             </p>
           </a>
         </li>
+       
         <li class="nav-item">
-          <a href="{{url('showreservation')}}" class="nav-link">
-            <i class="fas fa-bullhorn nav-icon "></i>
+          <a href="{{url('profile')}}" class="nav-link">
+            <i class="fa fa-user nav-icon "></i>
             <p>
-           Reservation
+            Profile
             </p>
           </a>
         </li>
-       
+        <li class="nav-item">
+          <a href="{{url('home')}}" class="nav-link">
+            <i class="fas fa-hamburger nav-icon  "></i>
+            <p>
+             Menu
+            </p>
+          </a>
+        </li>
         @endif
       </ul>
         <aside class="control-sidebar control-sidebar-dark">

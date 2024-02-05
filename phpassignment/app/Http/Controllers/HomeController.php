@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Reservation;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
 
@@ -25,7 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $totalUsers = User::count();
+        $totalUser = User::where('role', '0')->count();
+        $totalReservation = Reservation::count();
+        $user = Auth::user();
+        $acceptedReservations = $user->reservations()->where('status', 'Accepted')->count();
+        return view('home',compact('totalUser','totalReservation','acceptedReservations'));
     }
     
 }
